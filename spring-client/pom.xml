@@ -42,6 +42,11 @@
     	<groupId>org.springframework.cloud</groupId>
     	<artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>easyexcel</artifactId>
+      <version>1.1.1</version>
+    </dependency>
   </dependencies>
   
 </project>
