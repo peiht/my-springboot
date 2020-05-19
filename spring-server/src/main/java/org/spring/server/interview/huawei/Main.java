@@ -1,4 +1,4 @@
-package org.spring.server.interview;
+package org.spring.server.interview.huawei;
 
 import java.util.ArrayList;
 import java.util.Arrays;

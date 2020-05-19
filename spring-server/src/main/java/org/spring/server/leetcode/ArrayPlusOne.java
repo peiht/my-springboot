@@ -60,12 +60,45 @@ public class ArrayPlusOne {
         return digits;
     }
 
+    public int[] plusOne1(int[] digits){
+        if (digits == null || digits.length == 0){
+            return new int[0];
+        }
+        int carry = 0;
+        for (int i= digits.length-1; i >= 0; i --){
+            if (i== digits.length-1){
+                digits[i] = digits[i] + carry+1;
+            }else {
+                digits[i] = digits[i] + carry;
+            }
+            int num = digits[i];
+            int a = num/10;
+            if (a == 1){
+                carry = 1;
+                digits[i] = 0;
+            }else {
+                carry = 0;
+            }
+        }
+        if (digits[0] == 0){
+            int[] digitsNew = new int[digits.length+1];
+            digitsNew[0] = 1;
+            for (int i=1; i<digitsNew.length; i++){
+                digitsNew[i] = 0;
+            }
+            return digitsNew;
+        }
+        return digits;
+    }
+
     public static void main(String[] args) {
         ArrayPlusOne arrayPlusOne = new ArrayPlusOne();
-        int[] array = {9, 9};
-        int[] arr  =  arrayPlusOne.plusOne(array);
+        int[] array = {2,4,9,3,9};
+        int[] arr  =  arrayPlusOne.plusOne1(array);
         System.out.println(Arrays.toString(arr));
 
+//        System.out.println(10/10);
+//        System.out.println(10%10);
 
     }
 }
