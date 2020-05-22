@@ -27,12 +27,28 @@ public class FindUnique {
         }
 
         int length = s.length();
-        Map<Character, Boolean> map = new HashMap<>();
-        for (int i = 0; i<length-1; i++){
-            if (!judge(s, i, map)){
+        Map<Character, Integer> map = new HashMap<>();
+//        for (int i = 0; i<length-1; i++){
+//            if (!judge(s, i, map) && !map.containsKey(s.charAt(i))){
+//                return i;
+//            }
+//        }
+//        if (!map.containsKey(s.charAt(length-1))){
+//            return length-1;
+//        }
+
+        for (int i = 0; i < length; i++) {
+            char c = s.charAt(i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        // find the index
+        for (int i = 0; i < length; i++) {
+            if (map.get(s.charAt(i)) == 1){
                 return i;
             }
         }
+
         return -1;
     }
 
@@ -40,7 +56,7 @@ public class FindUnique {
         int length = s.length();
         for (int j=length-1; j>start; j--){
             char x = s.charAt(start);
-            if (!map.get(x)){
+            if (!map.getOrDefault(x, false)){
                 if (x == s.charAt(j)){
                     map.put(x, true);
                     return true;
@@ -53,7 +69,7 @@ public class FindUnique {
     }
 
     public static void main(String[] args) {
-        String str = "aadadaad";
+        String str = "dd";
         FindUnique findUnique = new FindUnique();
         System.out.println(findUnique.firstUniqChar(str));
     }

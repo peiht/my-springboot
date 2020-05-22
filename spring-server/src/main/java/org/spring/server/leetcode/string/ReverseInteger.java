@@ -95,5 +95,6 @@ public class ReverseInteger {
         ReverseInteger reverseInteger = new ReverseInteger();
         Integer x = Integer.valueOf(1534236469);
         System.out.println(reverseInteger.reverse(x));
+
     }
 }

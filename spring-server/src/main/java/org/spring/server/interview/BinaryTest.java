@@ -43,5 +43,6 @@ public class BinaryTest {
         BinaryTest binaryTest = new BinaryTest();
         System.out.println(binaryTest.add(30, 19));
 
+        System.out.println(1 << Integer.SIZE - 3);
     }
 }
