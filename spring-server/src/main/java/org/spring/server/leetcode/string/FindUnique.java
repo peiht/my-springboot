@@ -52,6 +52,9 @@ public class FindUnique {
         return -1;
     }
 
+
+
+
     private boolean judge(String s, int start, Map<Character, Boolean> map){
         int length = s.length();
         for (int j=length-1; j>start; j--){
