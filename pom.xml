@@ -48,6 +48,7 @@
   	<module>spring-server</module>
   	<module>spring-client</module>
   	<module>spring-eureka</module>
+      <module>spring-data</module>
   </modules>
   
   <build>

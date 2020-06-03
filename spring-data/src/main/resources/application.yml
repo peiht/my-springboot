@@ -1,0 +1,13 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch_hitopei
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
+
+server:
+  port: 8080
+
+logging:
+  path: classpath:log4j/log4j-local.xml

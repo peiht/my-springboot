@@ -1,4 +1,4 @@
-package org.spring.server.interview;
+package org.spring.server.interview.tecnent;
 
 import java.util.*;
 
