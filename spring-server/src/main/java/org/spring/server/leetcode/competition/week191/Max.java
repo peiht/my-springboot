@@ -1,4 +1,4 @@
-package org.spring.server.leetcode.competition;
+package org.spring.server.leetcode.competition.week191;
 
 /**
  * 5424.
