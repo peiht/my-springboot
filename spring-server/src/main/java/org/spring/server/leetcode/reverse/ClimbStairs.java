@@ -49,4 +49,19 @@ public class ClimbStairs {
         map.put(n, result);
         return result;
     }
+
+    /**
+     * dp
+     * @param n
+     * @return
+     */
+    public int climbStairs1(int n) {
+        int p = 0, q = 0, r = 1;
+        for (int i = 1; i <= n; ++i) {
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
+    }
 }
