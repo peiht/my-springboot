@@ -1,8 +1,8 @@
-package org.spring.server.leetcode;
+package org.spring.server.leetcode.base;
 
 public class ListNode {
 
-    int val;
+    public int val;
     public ListNode next;
     public ListNode(int x) { val = x; }
     public ListNode(){ }

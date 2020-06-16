@@ -1,5 +1,7 @@
 package org.spring.server.leetcode;
 
+import org.spring.server.leetcode.base.ListNode;
+
 /**
  * 两两交换节点位置
  * @author hitopei

@@ -1,6 +1,6 @@
 package org.spring.server.leetcode.reverse;
 
-import org.spring.server.leetcode.ListNode;
+import org.spring.server.leetcode.base.ListNode;
 
 /**
  * 翻转链表

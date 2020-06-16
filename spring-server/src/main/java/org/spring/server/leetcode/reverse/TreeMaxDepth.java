@@ -1,7 +1,7 @@
 package org.spring.server.leetcode.reverse;
 
 import javafx.util.Pair;
-import org.spring.server.leetcode.TreeNode;
+import org.spring.server.leetcode.base.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -20,8 +20,8 @@ public class TreeMaxDepth {
         if (treeNode == null) {
             return 0;
         } else {
-            int left = maxDepth(treeNode.left);
-            int right = maxDepth(treeNode.right);
+            int left = maxDepth(treeNode.left) + 1;
+            int right = maxDepth(treeNode.right) + 1;
             return Math.max(left, right);
         }
     }
@@ -49,5 +49,15 @@ public class TreeMaxDepth {
             }
         }
         return depth;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(5);
+
+        System.out.println(new TreeMaxDepth().maxDepth(root));
     }
 }

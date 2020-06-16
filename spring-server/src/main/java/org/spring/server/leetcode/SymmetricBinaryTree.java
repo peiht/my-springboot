@@ -1,5 +1,7 @@
 package org.spring.server.leetcode;
 
+import org.spring.server.leetcode.base.TreeNode;
+
 /**
  * @author hitopei
  *

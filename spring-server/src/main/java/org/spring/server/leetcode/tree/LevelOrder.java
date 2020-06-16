@@ -2,7 +2,7 @@ package org.spring.server.leetcode.tree;
 
 
 
-import org.spring.server.leetcode.TreeNode;
+import org.spring.server.leetcode.base.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

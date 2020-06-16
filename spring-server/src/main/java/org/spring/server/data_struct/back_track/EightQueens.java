@@ -3,6 +3,7 @@ package org.spring.server.data_struct.back_track;
 /**
  * @author Administrator
  * 八皇后问题
+ * 回溯算法
  */
 public class EightQueens {
 
@@ -49,6 +50,6 @@ public class EightQueens {
 
     public static void main(String[] args) {
         EightQueens eightQueens = new EightQueens();
-        eightQueens.cal8queens(8);
+        eightQueens.cal8queens(0);
     }
 }

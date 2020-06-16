@@ -1,11 +1,10 @@
 package org.spring.server.leetcode.tree;
 
-import org.spring.server.leetcode.TreeNode;
+import org.spring.server.leetcode.base.TreeNode;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 
 /**
  * @author hitopei

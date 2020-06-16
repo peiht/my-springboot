@@ -1,6 +1,6 @@
 package org.spring.server.leetcode.tree;
 
-import org.spring.server.leetcode.TreeNode;
+import org.spring.server.leetcode.base.TreeNode;
 
 /**
  * 根据一棵树的前序遍历与中序遍历构造二叉树。

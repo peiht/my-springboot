@@ -1,6 +1,6 @@
 package org.spring.server.leetcode.reverse;
 
-import org.spring.server.leetcode.TreeNode;
+import org.spring.server.leetcode.base.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;
