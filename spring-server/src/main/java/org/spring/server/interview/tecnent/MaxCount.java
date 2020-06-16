@@ -4,12 +4,17 @@ import java.util.*;
 
 public class MaxCount {
 
+    /**
+     * leetCode超时
+     * @param array
+     * @return
+     */
     public int maxCount(int[] array){
         if (array.length == 0){
             return 0;
         }
 
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for (int i=0; i<array.length; i++){
             for (int j=i; j<array.length;j++){
                 int[] arrayNew = Arrays.copyOfRange(array, i,j+1);
@@ -51,9 +56,27 @@ public class MaxCount {
         }
         return max;
     }
+
+    /**
+     * 贪心算法
+     * @param nums
+     * @return
+     */
+    public int maxCount2(int[] nums){
+        int res = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            if (sum > 0)
+                sum += num;
+            else
+                sum = num;
+            res = Math.max(res, sum);
+        }
+        return res;
+    }
     public static void main(String[] args) {
-        int[] array = {1, 4, -5, 9, 8, 3, -6};
+        int[] array = {-2,1,-3,4,-1,2,1,-5,4};
         MaxCount maxCount = new MaxCount();
-        System.out.println(maxCount.maxCount1(array));
+        System.out.println(maxCount.maxCount2(array));
     }
 }
