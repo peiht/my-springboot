@@ -56,6 +56,23 @@ public class LongestCommonPrefix {
         return true;
     }
 
+    public String longestCommonPrefix1(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        String reg = strs[0];
+        for (String str : strs) {
+            while (!str.startsWith(reg)) {
+                //从后往前截取，截取到最后如果还没有完全匹配，则说明没有公共前缀
+                if (reg.length() == 1) {
+                    return "";
+                }
+                reg = reg.substring(0, reg.length()-1);
+            }
+        }
+        return reg;
+    }
+
     public static void main(String[] args) {
         String[] strs = {"a","as","ad"};
         System.out.println(new LongestCommonPrefix().longestCommonPrefix(strs));
