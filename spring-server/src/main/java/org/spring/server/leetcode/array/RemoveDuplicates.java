@@ -47,10 +47,29 @@ public class RemoveDuplicates {
         }
         return pre+1;
     }
+
+    public int removeDuplicates1(int[] nums) {
+        int count = 1;
+        int length = nums.length;
+        if (length == 0) {
+            return 0;
+        }
+
+        int indexNum = nums[0];
+        for (int i = 1; i < length; i++) {
+            if (nums[i] > indexNum) {
+                indexNum = nums[i];
+                nums[count] = nums[i];
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
         int[] nums = {0,0,1,1,1,2,2,3,3,4};
-        System.out.println(removeDuplicates.removeDuplicates(nums));
+        System.out.println(removeDuplicates.removeDuplicates1(nums));
     }
 
 }
