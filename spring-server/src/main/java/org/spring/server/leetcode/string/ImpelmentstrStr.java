@@ -35,9 +35,46 @@ public class ImpelmentstrStr {
         }
         return -1;
     }
+
+    /**
+     * 双指针
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public int strStr1(String haystack, String needle){
+        int nLen = needle.length();
+        if (nLen == 0) {
+            return 0;
+        }
+
+        int hLen = haystack.length();
+
+        int l = 0;
+        while (l < hLen - nLen + 1) {
+            while (haystack.charAt(l) != needle.charAt(0)) {
+                l++;
+            }
+
+            int currentLen = 0, pL = 0;
+            while (pL < nLen && l < hLen && haystack.charAt(l) == needle.charAt(pL)) {
+                ++l;
+                ++pL;
+                ++currentLen;
+            }
+            if (currentLen == nLen) {
+                return l - nLen;
+            }
+
+            l = l - currentLen + 1;
+
+        }
+
+        return -1;
+    }
     public static void main(String[] args) {
         String hayStack = "hell";
         String needle = "ll";
-        System.out.println(new ImpelmentstrStr().strStr(hayStack, needle));
+        System.out.println(new ImpelmentstrStr().strStr1(hayStack, needle));
     }
 }

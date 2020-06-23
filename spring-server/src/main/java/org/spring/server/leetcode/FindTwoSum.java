@@ -51,6 +51,7 @@ public class FindTwoSum {
 
     /**
      * 优化， 使用hashmap优化查找复杂度
+     * 记忆化存储
      */
     public int[] twoSum1(int[] sums, int target){
         int length = sums.length;

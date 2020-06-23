@@ -30,29 +30,20 @@ public class RemoveElement {
             return -1;
         }
 
-        int index = nums.length-1;
-        for(int i=0; i < index+1;){
-            int value = nums[i];
-//            if (nums[index] == val){
-//                --index;
-//            }else {
-//                i++;
-//            }
-            int temp = nums[index];
-            if(val == value){
-                nums[i] = nums[index];
-                --index;
-            }else {
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j];
                 i++;
             }
         }
-
-        return index + 1;
+        return i;
     }
+
 
     public static void main(String[] args) {
         RemoveElement element = new RemoveElement();
-        int[] array = {1,6,7,7,834,34,2,45};
-        System.out.println(element.removeElement(array, 1));
+        int[] array = {3,2,2,3};
+        System.out.println(element.removeElement(array, 3));
     }
 }
