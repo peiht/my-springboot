@@ -1,6 +1,7 @@
 package org.spring.server.leetcode.competition.doubleweek29;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -70,8 +71,34 @@ public class LongestSubarray {
         return res;
     }
 
+    /**
+     * dp
+     *
+     * @param nums
+     * @return
+     */
+    public int longestSubarray1(int[] nums) {
+        int len = nums.length;
+        int[][] dp = new int[len + 1][2];
+
+        dp[0][1] = -1;
+
+        int max = 0;
+        for (int i = 0; i < len; i++) {
+            if (nums[i] == 0) {
+                dp[i+1][0] = 0;
+                dp[i+1][1] = dp[i][0];
+            }else {
+                dp[i+1][0] = dp[i][0] + 1;
+                dp[i+1][1] = dp[i][1] + 1;
+            }
+            max = Math.max(max, dp[i+1][1]);
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         int[] nums = {0,1,1,1,0,1,1,0,1};
-        System.out.println(new LongestSubarray().longestSubarray(nums));
+        System.out.println(new LongestSubarray().longestSubarray1(nums));
     }
 }
