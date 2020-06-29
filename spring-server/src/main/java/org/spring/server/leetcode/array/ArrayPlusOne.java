@@ -1,4 +1,4 @@
-package org.spring.server.leetcode;
+package org.spring.server.leetcode.array;
 
 import java.util.Arrays;
 

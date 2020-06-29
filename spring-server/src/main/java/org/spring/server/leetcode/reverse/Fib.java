@@ -33,7 +33,21 @@ public class Fib {
         }
         return fib(N-1) + fib(N-2);
     }
+
+    /**
+     * dp方案
+     * @param n
+     * @return
+     */
+    public int fib1(int n) {
+        int[] dp = new int[n + 1];
+        dp[1] = dp[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[n];
+    }
     public static void main(String[] args) {
-        System.out.println(new Fib().fib(2));
+        System.out.println(new Fib().fib1(4));
     }
 }
