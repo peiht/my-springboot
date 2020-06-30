@@ -1,4 +1,4 @@
-package org.spring.server.leetcode;
+package org.spring.server.leetcode.tree;
 
 import org.spring.server.leetcode.base.TreeNode;
 

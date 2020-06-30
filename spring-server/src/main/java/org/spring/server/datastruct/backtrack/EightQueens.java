@@ -1,4 +1,4 @@
-package org.spring.server.data_struct.back_track;
+package org.spring.server.datastruct.backtrack;
 
 /**
  * @author Administrator
