@@ -2,6 +2,9 @@ package org.spring.server.leetcode.tree;
 
 import org.spring.server.leetcode.base.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author hitopei
  *
@@ -24,6 +27,12 @@ import org.spring.server.leetcode.base.TreeNode;
 public class HasPathSum {
 
 
+    /**
+     * 递归方式
+     * @param root
+     * @param sum
+     * @return
+     */
     public boolean hasPathSum(TreeNode root, int sum){
         if (root == null) {
             return false;
@@ -33,6 +42,45 @@ public class HasPathSum {
             return sum == 0;
         }
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
+    }
+
+    /**
+     * 广度优先遍历
+     * @param root
+     * @param sum
+     * @return
+     */
+    public boolean hasPathSum1(TreeNode root, int sum){
+        if (root == null) {
+            return false;
+        }
+
+        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
+        Queue<Integer> valSum = new LinkedList<>();
+        treeNodeQueue.offer(root);
+        valSum.offer(root.val);
+        while (!treeNodeQueue.isEmpty()) {
+            TreeNode node = treeNodeQueue.poll();
+            int val = valSum.poll().intValue();
+            if (node.left == null && node.right == null) {
+                if (val == sum){
+                    return true;
+                }
+                continue;
+            }
+
+            if (node.left != null) {
+                treeNodeQueue.offer(node.left);
+                valSum.offer(node.left.val + val);
+            }
+
+            if (node.right != null) {
+                treeNodeQueue.offer(node.right);
+                valSum.offer(node.right.val + val);
+            }
+
+        }
+        return false;
     }
 
 
