@@ -1,8 +1,6 @@
 package org.spring.server.leetcode.array;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
@@ -46,5 +44,30 @@ public class SingleNumber {
 
 
         return list.get(0);
+    }
+
+    public int singleNumber1(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums){
+            if(set.contains(num)) {
+                set.remove(num);
+            } else {
+                set.add(num);
+            }
+        }
+        Iterator<Integer> iterator = set.iterator();
+        int res = 0;
+        while (iterator.hasNext()) {
+            res = iterator.next();
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2,2,1};
+        int[] nums1 = {4,1,2,1,2};
+        SingleNumber singleNumber = new SingleNumber();
+        System.out.println(singleNumber.singleNumber1(nums));
+        System.out.println(singleNumber.singleNumber1(nums1));
     }
 }
