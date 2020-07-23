@@ -35,7 +35,7 @@ import java.util.List;
 public class GenerateTrees {
 
     public LinkedList<TreeNode> generate_trees(int start, int end) {
-        LinkedList<TreeNode> all_trees = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> all_trees = new LinkedList<>();
         if (start > end) {
             all_trees.add(null);
             return all_trees;

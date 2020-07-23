@@ -3,6 +3,7 @@ package org.spring.server.leetcode.array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @author hitopei
@@ -47,6 +48,24 @@ public class DailyTemperatures {
             stack.add(i);
         }
         return result;
+    }
+
+    public int[] dailyTemperature(int[] T){
+        int length = T.length;
+        int[] res = new int[length];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(length-1);
+        for (int i = length-2; i >= 0 ; i--) {
+            if (!stack.isEmpty()) {
+                int cur = stack.peek();
+                if (T[i] > cur) {
+                    stack.push(i);
+                }else {
+
+                }
+            }
+        }
+        return null;
     }
 
     public static void main(String[] args) {
