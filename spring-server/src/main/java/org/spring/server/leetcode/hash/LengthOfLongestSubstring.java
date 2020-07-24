@@ -46,8 +46,31 @@ public class LengthOfLongestSubstring {
         return ans;
     }
 
+    public int lengthOfLongestSubstring1(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        char[] chars = s.toCharArray();
+        int len = chars.length;
+        int res = 0;
+        int count = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < len; i++) {
+            if (map.containsKey(chars[i])){
+                count = 0;
+                map.clear();
+            }
+            count++;
+            map.put(chars[i], 1);
+
+            res = Math.max(res, count);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
-        String s = "pwwkew";
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
+        String s = "dvdf";
+        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring1(s));
     }
 }
