@@ -63,6 +63,8 @@ public class SingleNumber {
         return res;
     }
 
+
+
     public static void main(String[] args) {
         int[] nums = {2,2,1};
         int[] nums1 = {4,1,2,1,2};
