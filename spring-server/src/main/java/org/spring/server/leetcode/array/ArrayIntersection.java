@@ -53,14 +53,40 @@ public class ArrayIntersection {
         return Arrays.copyOfRange(nums1, 0, k);
     }
 
+    /**
+     * 排序
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public int[] intersect1(int[] nums1, int[] nums2) {
+       Arrays.sort(nums1);
+       Arrays.sort(nums2);
+       int len1 = nums1.length, len2 = nums2.length;
+       int[] res = new int[Math.min(len1, len2)];
+       int index1 = 0, index2 = 0, index = 0;
+       while (index1 < len1 && index2 < len2){
+           if (nums1[index1] < nums2[index2]) {
+               index1++;
+           } else if (nums1[index1] > nums2[index2]) {
+               index2++;
+           }else{
+               res[index] = nums1[index1];
+               index1++;
+               index2++;
+               index++;
+           }
+       }
+       return Arrays.copyOfRange(res, 0, index);
+    }
+
     public static void main(String[] args) {
-        int[] num1 = {1,2,3,4,5,6,7};
-        int[] num2 = {3,4,5,9};
+        int[] num1 = {4, 9, 5};
+        int[] num2 = {9, 4, 9, 8, 4};
 
         ArrayIntersection arrayIntersection = new ArrayIntersection();
-        int[] intersections = arrayIntersection.intersect(num1, num2);
-        for (int intersection: intersections){
-            System.out.println(intersection);
-        }
+        int[] intersections = arrayIntersection.intersect1(num1, num2);
+        System.out.println(Arrays.toString(intersections));
     }
 }
