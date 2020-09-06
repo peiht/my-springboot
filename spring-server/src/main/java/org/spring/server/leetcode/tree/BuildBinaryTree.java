@@ -2,6 +2,8 @@ package org.spring.server.leetcode.tree;
 
 import org.spring.server.leetcode.base.TreeNode;
 
+import java.util.Stack;
+
 /**
  * 根据一棵树的前序遍历与中序遍历构造二叉树。
  * <p>
@@ -54,6 +56,8 @@ public class BuildBinaryTree {
         root.right = buildTreeHelper(preorder, p_start + leftNum + 1, p_end, inorder, i_root_index + 1, i_end);
         return root;
     }
+
+    
 
     public static void main(String[] args) {
         int[] preorder = {3,9,20,15,7};
