@@ -36,7 +36,7 @@ public class PermuteUnique {
         return res;
     }
 
-    private void dfs(int nums[], int index, List<List<Integer>> res, Deque<Integer> path, int length, boolean[] used) {
+    private void dfs(int[] nums, int index, List<List<Integer>> res, Deque<Integer> path, int length, boolean[] used) {
         if (index >= length) {
             res.add(new ArrayList<>(path));
             return;
