@@ -37,7 +37,7 @@ public class IsPalindrome {
             head = head.next;
         }
         for (int i = 0, j = list.size() - 1; i < list.size()/2;) {
-            if (list.get(i) == list.get(j)) {
+            if (list.get(i).equals(list.get(j))) {
                 i++;
                 j--;
             }else {
