@@ -63,6 +63,6 @@ public class ThreeSum {
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> result = new ThreeSum().threeSum(nums);
-        result.forEach(integers -> {integers.forEach(System.out::println);});
+        System.out.println(result.toString());
     }
 }
