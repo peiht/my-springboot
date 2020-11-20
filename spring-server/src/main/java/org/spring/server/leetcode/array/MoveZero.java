@@ -49,11 +49,26 @@ public class MoveZero {
     }
 
 
+    public void moveZero(int[] nums){
+        int len = nums.length, index = 0;
+
+        for(int i = 0; i < len; i++){
+            if(nums[i] != 0) {
+                nums[index++] = nums[i];
+            }
+        }
+
+        for (int i = index; i < len; i++) {
+            nums[i] = 0;
+        }
+    }
+
 
     public static void main(String[] args) {
         MoveZero moveZero = new MoveZero();
         int[] nums = {0,0,1, 34,5,6,7};
-        moveZero.moveZeroes(nums);
+        //moveZero.moveZeroes(nums);
+        moveZero.moveZero(nums);
 
         for (int num : nums){
             System.out.println(num);
