@@ -49,6 +49,8 @@
   	<module>spring-client</module>
   	<module>spring-eureka</module>
       <module>spring-data</module>
+      <module>design-pattern</module>
+      <module>diy-spring</module>
   </modules>
   
   <build>
