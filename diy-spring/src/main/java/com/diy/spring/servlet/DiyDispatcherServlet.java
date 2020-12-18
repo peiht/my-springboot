@@ -150,7 +150,6 @@ public class DiyDispatcherServlet extends HttpServlet {
         try {
             for (String className : classNameList) {
                 Class<?> clazz = Class.forName(className);
-                // TODO
                 if (clazz.isAnnotationPresent(XController.class)){
                     String beanName = toLowerFirstCase(clazz.getSimpleName());
                     Object instance = clazz.newInstance();

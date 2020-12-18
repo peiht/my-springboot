@@ -33,6 +33,7 @@ public class GroupAnagrams {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         GroupAnagrams groupAnagrams = new GroupAnagrams();
         List<List<String>> res = groupAnagrams.groupAnagrams(strs);
+        System.out.println(res.toString());
         System.out.println(1);
     }
 }
