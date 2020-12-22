@@ -12,6 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * concurrentHashMap concurrentLinkedQueue ReadWriteLock实现LRU算法
  * LRU算法，least recently used最近最少使用
  * 博文链接 https://zhuanlan.zhihu.com/p/135936339
+ * @author hitopei
  * @param <K>
  * @param <V>
  */

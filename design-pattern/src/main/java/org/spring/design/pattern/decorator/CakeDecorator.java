@@ -1,7 +1,6 @@
-package org.spring.server.designPattern.decorator;
+package org.spring.design.pattern.decorator;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
 
 public abstract class CakeDecorator extends Cake{
 

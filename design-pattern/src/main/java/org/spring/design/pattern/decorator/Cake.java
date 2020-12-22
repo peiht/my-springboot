@@ -1,4 +1,4 @@
-package org.spring.server.designPattern.decorator;
+package org.spring.design.pattern.decorator;
 
 import java.math.BigDecimal;
 

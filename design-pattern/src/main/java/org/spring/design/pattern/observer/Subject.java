@@ -1,4 +1,4 @@
-package org.spring.server.designPattern.observer;
+package org.spring.design.pattern.observer;
 
 import java.util.LinkedList;
 import java.util.List;

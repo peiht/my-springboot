@@ -1,4 +1,4 @@
-package org.spring.server.designPattern.decorator;
+package org.spring.design.pattern.decorator;
 
 public class TestDecorator {
     public static void main(String[] args) {

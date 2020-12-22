@@ -44,15 +44,15 @@ public class FindTheDifference {
     public char findTheDifference(String s, String t) {
         int[] array = new int[26];
         char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            array[chars[i] - 'a']++;
+        for (char aChar : chars) {
+            array[aChar - 'a']++;
         }
 
         char[] chars1 = t.toCharArray();
-        for (int i = 0; i < chars1.length; i++) {
-            int index = chars1[i] - 'a';
+        for (char c : chars1) {
+            int index = c - 'a';
             if (array[index] == 0) {
-                return chars1[i];
+                return c;
             }
             array[index]--;
         }

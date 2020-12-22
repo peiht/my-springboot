@@ -10,7 +10,6 @@
   </parent>
   
   <artifactId>spring-server</artifactId>
-  <groupId>com.myspring.boot</groupId>
   <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-server</name>

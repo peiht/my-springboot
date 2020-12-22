@@ -17,5 +17,8 @@ public class MainController {
 	}
 
 
+	public void webFlux(){
+
+	}
 
 }

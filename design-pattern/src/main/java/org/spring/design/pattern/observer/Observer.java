@@ -1,4 +1,4 @@
-package org.spring.server.designPattern.observer;
+package org.spring.design.pattern.observer;
 
 /**
  * 抽象的观察类
