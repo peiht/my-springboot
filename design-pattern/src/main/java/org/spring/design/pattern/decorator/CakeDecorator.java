@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public abstract class CakeDecorator extends Cake{
 
-    private Cake cake;
+    private final Cake cake;
 
     public CakeDecorator(Cake cake) {
         this.cake = cake;
