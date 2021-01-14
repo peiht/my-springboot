@@ -1,6 +1,9 @@
 package org.spring.server.leetcode.array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * @author hitopei
@@ -35,10 +38,26 @@ public class RotateArray {
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5,6,7};
         RotateArray rotateArray = new RotateArray();
-        rotateArray.rotate(nums, 3);
-        for (int num : nums){
-            System.out.println(num);
-        }
+        rotateArray.rotate1(nums, 3);
+        System.out.println(Arrays.toString(nums));
+    }
 
+    public void rotate1(int[] nums, int k){
+        Stack<Integer> stack = new Stack<>();
+        int j = nums.length - 1;
+        for (int i = 0; i < k; i++) {
+            stack.add(nums[j]);
+            j--;
+        }
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i + k >= nums.length - 1){
+                nums[i] = nums[i - k];
+            }
+        }
+        int index = 0;
+        while (!stack.isEmpty()) {
+            nums[index] = stack.pop();
+            index++;
+        }
     }
 }
