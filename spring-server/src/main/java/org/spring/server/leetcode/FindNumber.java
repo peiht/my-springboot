@@ -31,27 +31,6 @@ public class FindNumber {
 
         int mid;
         while (start <= end ){
-//            int mid = (start + end) / 2;
-//            if(target == nums[mid]){
-//                return mid;
-//            }
-//            if (nums[start] <= nums[mid]){
-//                if (target > nums[mid]){
-//                    if(target >= nums[start]){
-//                        start = mid + 1;
-//                    }else{
-//                        end = mid -1;
-//                    }
-//                }
-//            } else{
-//                if(target < nums[mid]){
-//                    if(target >= nums[start]){
-//                        end = mid -1;
-//                    }else{
-//                        start = mid +1;
-//                    }
-//                }
-//            }
             mid = start + (end - start) / 2;
             if (nums[mid] == target) {
                 return mid;
@@ -140,4 +119,6 @@ public class FindNumber {
         int[] array = {4,5,6,7,0,1,2};
         System.out.println(findNumber.search(array, 1));
     }
+
+
 }
