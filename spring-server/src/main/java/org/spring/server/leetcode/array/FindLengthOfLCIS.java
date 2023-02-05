@@ -20,7 +20,7 @@ package org.spring.server.leetcode.array;
  * 解释: 最长连续递增序列是 [2], 长度为1。
  *
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence
+ * 链接：https://leetcode-cn.com/problems/Plongest-continuous-increasing-subsequence
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class FindLengthOfLCIS {

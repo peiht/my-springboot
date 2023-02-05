@@ -38,7 +38,8 @@ public class LengthOfLongestSubstring {
         for (int i = 0, j = 0; j < len; j++) {
             char c = s.charAt(j);
             if (map.containsKey(c)) {
-                i = map.get(c);
+                //i = map.get(c);
+                i = Math.max(i, map.get(c) + 1);
             }
             map.put(c, j+1);
             ans = Math.max(ans, j - i + 1);
@@ -47,30 +48,22 @@ public class LengthOfLongestSubstring {
     }
 
     public int lengthOfLongestSubstring1(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-
-        char[] chars = s.toCharArray();
-        int len = chars.length;
-        int res = 0;
-        int count = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < len; i++) {
-            if (map.containsKey(chars[i])){
-                count = 0;
-                map.clear();
+        if (s.length()==0) return 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int max = 0;
+        int left = 0;
+        for(int i = 0; i < s.length(); i ++){
+            if(map.containsKey(s.charAt(i))){
+                left = Math.max(left,map.get(s.charAt(i)) + 1);
             }
-            count++;
-            map.put(chars[i], 1);
-
-            res = Math.max(res, count);
+            map.put(s.charAt(i),i);
+            max = Math.max(max,i-left+1);
         }
-        return res;
+        return max;
     }
 
     public static void main(String[] args) {
         String s = "dvdf";
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring1(s));
+        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
     }
 }
