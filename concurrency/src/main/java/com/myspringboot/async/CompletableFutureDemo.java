@@ -31,9 +31,7 @@ public class CompletableFutureDemo {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        CompletableFuture<String> result = doSomethingOne("111").thenCombine(doSomethingTwo("456"), (e1, e2) -> {
-            return e1 + e2;
-        });
+        CompletableFuture<String> result = doSomethingOne("111").thenCombine(doSomethingTwo("456"), (e1, e2) -> e1 + e2);
         System.out.println(result.get());
     }
 }

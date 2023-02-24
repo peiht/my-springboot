@@ -13,7 +13,7 @@ public class ChooseSort {
         int[] array = {4,2,5,3,6,1};
         ChooseSort chooseSort = new ChooseSort();
         int[] result = chooseSort.sort(array);
-        Arrays.stream(result).forEach(e -> System.out.println(e));
+        Arrays.stream(result).forEach(System.out::println);
     }
 
     public int[] sort(int[] array){
